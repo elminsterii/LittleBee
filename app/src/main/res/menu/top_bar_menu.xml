@@ -17,17 +17,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_drawer"
+        android:title="@string/menu_action_setting"
+        app:actionLayout="@layout/top_bar_layout"
+        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/action_search"
         android:title="@string/menu_action_search"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
-    <!-- Settings, should always be in the overflow -->
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/menu_add"
         android:icon="@drawable/ic_drawer"
-        android:title="@string/menu_action_setting"
-        app:showAsAction="never" />
+        android:title="@string/menu_action_add"
+        app:showAsAction="always" />
 </menu>

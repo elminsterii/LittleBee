@@ -11,9 +11,6 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton mBtnSetting;
-    private ImageButton mBtnAdd;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.top_bar_menu, menu);
         return true;
     }
@@ -49,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         RelativeLayout rootView = (RelativeLayout) itemSetting.getActionView();
 
-        mBtnSetting = (ImageButton) rootView.findViewById(R.id.imageButtonSetting);
-        mBtnAdd = (ImageButton) rootView.findViewById(R.id.imageButtonAdd);
+        ImageButton mBtnSetting = (ImageButton) rootView.findViewById(R.id.imageButtonSetting);
+        ImageButton mBtnAdd = (ImageButton) rootView.findViewById(R.id.imageButtonAdd);
 
         mBtnSetting.setOnClickListener(new View.OnClickListener() {
             @Override
