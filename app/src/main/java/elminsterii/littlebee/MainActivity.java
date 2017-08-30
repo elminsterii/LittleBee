@@ -1,12 +1,18 @@
 package elminsterii.littlebee;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ImageButton mBtnSetting;
+    private ImageButton mBtnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,35 +21,68 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
-        // my_child_toolbar is defined in the layout file
-//        Toolbar myChildToolbar =
-//                (Toolbar) findViewById(R.id.my_child_toolbar);
-//        setSupportActionBar(myChildToolbar);
-
-        // Get a support ActionBar corresponding to this toolbar
-        ActionBar ab = getSupportActionBar();
-        // Enable the Up button
-        assert ab != null;
-        ab.setDisplayHomeAsUpEnabled(true);
+//
+//        // Inflate your custom layout
+//        final ViewGroup actionBarLayout = (ViewGroup) getLayoutInflater().inflate(
+//                R.layout.top_bar_layout,
+//                null);
+//
+//        // Set up your ActionBar
+//        final ActionBar actionBar = getSupportActionBar();
+//        actionBar.setDisplayShowHomeEnabled(false);
+//        actionBar.setDisplayShowTitleEnabled(false);
+//        actionBar.setDisplayShowCustomEnabled(true);
+//        actionBar.setCustomView(actionBarLayout);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
-                return true;
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.top_bar_menu, menu);
+        return true;
+    }
 
-            case R.id.action_search:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
-                return true;
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        final MenuItem itemSetting = menu.findItem(R.id.menu_setting);
+        final MenuItem itemAdd = menu.findItem(R.id.menu_add);
+
+        RelativeLayout rootView = (RelativeLayout) itemSetting.getActionView();
+
+        mBtnSetting = (ImageButton) rootView.findViewById(R.id.imageButtonSetting);
+        mBtnAdd = (ImageButton) rootView.findViewById(R.id.imageButtonAdd);
+
+        mBtnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onOptionsItemSelected(itemSetting);
+            }
+        });
+
+        mBtnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onOptionsItemSelected(itemAdd);
+            }
+        });
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+
+        switch (item.getItemId()) {
+            case R.id.menu_setting:
+                break;
+
+            case R.id.menu_add:
+                break;
 
             default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
+                return false;
         }
+
+        return true;
     }
 }
