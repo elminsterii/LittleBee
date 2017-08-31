@@ -5,4 +5,5 @@
     <string name="menu_action_search">Search</string>
     <string name="menu_action_setting">Setting</string>
     <string name="menu_action_add">Add</string>
+    <string name="main_page_bg_string">Drag for refresh</string>
 </resources>

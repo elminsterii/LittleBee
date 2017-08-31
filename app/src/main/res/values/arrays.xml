@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="drawItems">
+    <string-array name="drawer_list">
         <item>Item 1</item>
         <item>Item 2</item>
         <item>Item 3</item>
