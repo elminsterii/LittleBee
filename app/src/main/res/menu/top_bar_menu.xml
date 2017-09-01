@@ -16,23 +16,10 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <item
-        android:id="@+id/menu_setting"
-        android:icon="@drawable/ic_drawer"
-        android:title="@string/menu_action_setting"
-        app:actionLayout="@layout/top_bar_layout"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/action_search"
+        android:id="@+id/menu_search"
         android:icon="@drawable/action_search"
         android:title="@string/menu_action_search"
-        app:showAsAction="always" />
-
-    <item
-        android:id="@+id/menu_add"
-        android:icon="@drawable/ic_drawer"
-        android:title="@string/menu_action_add"
+        app:actionLayout="@layout/top_bar_layout"
         app:showAsAction="always" />
 </menu>

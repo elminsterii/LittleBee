@@ -103,25 +103,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        final MenuItem itemSetting = menu.findItem(R.id.menu_setting);
-        final MenuItem itemAdd = menu.findItem(R.id.menu_add);
+        final MenuItem itemSearchMenu = menu.findItem(R.id.menu_search);
 
-        RelativeLayout rootView = (RelativeLayout) itemSetting.getActionView();
+        RelativeLayout rootView = (RelativeLayout) itemSearchMenu.getActionView();
+        ImageButton mBtnSearch = (ImageButton) rootView.findViewById(R.id.imageButtonSearch);
 
-        ImageButton mBtnSetting = (ImageButton) rootView.findViewById(R.id.imageButtonSetting);
-        ImageButton mBtnAdd = (ImageButton) rootView.findViewById(R.id.imageButtonAdd);
-
-        mBtnSetting.setOnClickListener(new View.OnClickListener() {
+        mBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onOptionsItemSelected(itemSetting);
-            }
-        });
-
-        mBtnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onOptionsItemSelected(itemAdd);
+                onOptionsItemSelected(itemSearchMenu);
             }
         });
 
@@ -148,10 +138,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         switch (item.getItemId()) {
-            case R.id.menu_setting:
-                break;
-
-            case R.id.menu_add:
+            case R.id.menu_search:
                 break;
 
             default:

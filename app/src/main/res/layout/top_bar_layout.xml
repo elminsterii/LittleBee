@@ -6,31 +6,27 @@
     android:orientation="vertical">
 
     <ImageButton
-        android:id="@+id/imageButtonSetting"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/editTextSearch"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@null"
-        app:srcCompat="@drawable/ic_drawer" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAdd"
+        android:id="@+id/imageButtonSearch"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
         android:background="@null"
-        app:srcCompat="@drawable/ic_drawer" />
+        android:contentDescription="@string/menu_action_search"
+        app:srcCompat="@drawable/action_search" />
 
     <EditText
         android:id="@+id/editTextSearch"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
+        android:layout_marginEnd="18dp"
+        android:layout_toStartOf="@+id/imageButtonSearch"
+        android:ellipsize="start"
+        android:ems="8"
+        android:gravity="center"
         android:hint="@string/menu_action_search"
         android:inputType="textPersonName" />
 </RelativeLayout>
