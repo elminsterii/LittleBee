@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDrawerLayout() {
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutDrawer);
+        mDrawerList = (ListView) findViewById(R.id.listViewDrawer);
         mPlanetTitles = getResources().getStringArray(R.array.drawer_list);
 
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
@@ -64,16 +64,10 @@ public class MainActivity extends AppCompatActivity {
                 myToolbar, R.string.drawer_open,
                 R.string.drawer_close) {
 
-            /**
-             * Called when a drawer has settled in a completely closed state.
-             */
             public void onDrawerClosed(View view) {
                 invalidateOptionsMenu();
             }
 
-            /**
-             * Called when a drawer has settled in a completely open state.
-             */
             public void onDrawerOpened(View drawerView) {
                 invalidateOptionsMenu();
             }

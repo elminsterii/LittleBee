@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorMainPageBackground">#272727</color>
-    <color name="colorTopBarBackground">#272727</color>
+    <color name="colorTopBarBackground">#202020</color>
+    <color name="colorDrawerBackground">#202020</color>
     <color name="colorStandardGrayText">#666666</color>
 </resources>
