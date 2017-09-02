@@ -57,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList = (ListView) findViewById(R.id.listViewDrawer);
         mPlanetTitles = getResources().getStringArray(R.array.drawer_list);
 
+        int iWidth = getResources().getDisplayMetrics().widthPixels / 2;
+        int iHeight = getResources().getDisplayMetrics().heightPixels;
+        DrawerLayout.LayoutParams params = (android.support.v4.widget.DrawerLayout.LayoutParams) mDrawerList.getLayoutParams();
+        params.width = iWidth;
+        params.height = iHeight;
+        mDrawerList.setLayoutParams(params);
+
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
                 GravityCompat.START);
 
