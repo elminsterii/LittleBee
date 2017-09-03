@@ -1,5 +1,6 @@
 package elminsterii.littlebee;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -10,15 +11,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import elminsterii.littlebee.tools.GlobalFunctions;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar myToolbar;
+    private TextView mTextViewSearchText;
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -109,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout rootView = (RelativeLayout) itemSearchMenu.getActionView();
         ImageButton mBtnSearch = (ImageButton) rootView.findViewById(R.id.imageButtonSearch);
 
+        mTextViewSearchText = (TextView) rootView.findViewById(R.id.editTextSearch);
+
         mBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,6 +148,15 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.menu_search:
+                String strSearchText = mTextViewSearchText.getText().toString();
+
+                if (GlobalFunctions.IsNullOrEmpty(strSearchText))
+                    showSearchTextKeyboard();
+                else
+                    hideSearchTextKeyboard();
+
+                //TODO : Do search function.
+
                 break;
 
             default:
@@ -147,5 +164,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showSearchTextKeyboard() {
+        mTextViewSearchText.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(mTextViewSearchText, InputMethodManager.SHOW_IMPLICIT);
+    }
+
+    private void hideSearchTextKeyboard() {
+        mTextViewSearchText.clearFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(mTextViewSearchText.getWindowToken(), 0);
     }
 }

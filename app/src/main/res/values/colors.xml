@@ -7,4 +7,6 @@
     <color name="colorTopBarBackground">#202020</color>
     <color name="colorDrawerBackground">#202020</color>
     <color name="colorStandardGrayText">#666666</color>
+
+    <color name="colorEditTextBg">#777777</color>
 </resources>

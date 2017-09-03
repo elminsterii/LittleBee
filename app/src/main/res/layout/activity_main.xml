@@ -8,14 +8,13 @@
     android:background="@color/colorMainPageBackground"
     tools:context="elminsterii.littlebee.MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="368dp"
-        android:layout_height="56dp"
-        android:background="@color/colorTopBarBackground"
-        android:elevation="4dp"
-        android:theme="@style/CustomActionBar"
-        app:popupTheme="@style/Theme.Custom" />
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="62dp"
+        android:gravity="center"
+        android:text="@string/main_page_bg_string"
+        android:textColor="@color/colorStandardGrayText"
+        android:textSize="22sp" />
 
     <FrameLayout
         android:id="@+id/content_frame"
@@ -32,12 +31,13 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp" />
 
-    <TextView
-        android:layout_width="170dp"
-        android:layout_height="62dp"
-        android:gravity="center"
-        android:text="@string/main_page_bg_string"
-        android:textColor="@color/colorStandardGrayText"
-        android:textSize="22sp" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTopBarBackground"
+        android:elevation="4dp"
+        android:theme="@style/CustomActionBar"
+        app:popupTheme="@style/Theme.Custom" />
 
 </android.support.v4.widget.DrawerLayout>

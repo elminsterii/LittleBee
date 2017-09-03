@@ -14,19 +14,25 @@
         android:layout_marginEnd="16dp"
         android:background="@null"
         android:contentDescription="@string/menu_action_search"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         app:srcCompat="@drawable/action_search" />
 
     <EditText
         android:id="@+id/editTextSearch"
+        style="@style/CustomEditText"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="18dp"
         android:layout_toStartOf="@+id/imageButtonSearch"
+        android:background="@null"
         android:ellipsize="start"
-        android:ems="8"
+        android:ems="6"
         android:gravity="center"
         android:hint="@string/menu_action_search"
-        android:inputType="textPersonName" />
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColorHint="@color/colorStandardGrayText" />
 </RelativeLayout>

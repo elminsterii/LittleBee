@@ -23,4 +23,9 @@
         <item name="windowActionBarOverlay">true</item>
     </style>
 
+    <style name="CustomEditText" parent="android:Widget.EditText">
+        <item name="android:background">@color/colorEditTextBg</item>
+        <item name="android:textColor">@color/colorStandardGrayText</item>
+    </style>
+
 </resources>
